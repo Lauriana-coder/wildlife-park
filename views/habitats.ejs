@@ -8,6 +8,11 @@
 <body>
     <%- include('partials/header') %>
     <h1>Our Habitats</h1>
-    <p>Explore our amazing wildlife zones.</p>
+    <% habitats.forEach(habitat => { %>
+        <div>
+            <h2><%= habitat.name %></h2>
+            <p><%= habitat.description %></p>
+        </div>
+    <% }) %>
 </body>
 </html>
