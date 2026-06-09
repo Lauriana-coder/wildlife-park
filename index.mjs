@@ -35,6 +35,10 @@ app.get('/faq', (req, res) => {
     res.render('faq');
 });
 
+app.get('/activity', (req, res) => {
+    res.render('activity');
+});
+
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
