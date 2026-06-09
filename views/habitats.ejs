@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habitats - Into The Wild</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <%- include('partials/header') %>
     <h1>Our Habitats</h1>
     <% habitats.forEach(habitat => { %>
-        <div>
+        <div class="habitat-card">
             <h2><%= habitat.name %></h2>
             <p><%= habitat.description %></p>
         </div>

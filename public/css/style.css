@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: #f5f0e8;
+    color: #2c1810;
+}
+
+nav {
+    background-color: #2c5f2e;
+    padding: 15px 30px;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #a8d5a2;
+}
+
+h1 {
+    font-size: 42px;
+    color: #2c5f2e;
+    margin: 30px;
+}
+
+h2 {
+    font-size: 26px;
+    color: #4a7c59;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.habitat-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+form {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    color: #2c5f2e;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+textarea {
+    height: 120px;
+}
+
+button {
+    background-color: #2c5f2e;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4a7c59;
+}
+
+h3 {
+    color: #2c5f2e;
+    margin: 20px 30px 5px 30px;
+    font-size: 18px;
+}
+
+h3 + p {
+    margin: 0 30px 15px 30px;
+}
