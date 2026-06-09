@@ -7,6 +7,7 @@ const PORT = 5000;
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     res.render('index');
@@ -20,6 +21,14 @@ app.get('/habitats', (req, res) => {
 
 app.get('/contact', (req, res) => {
     res.render('contact');
+});
+
+app.post('/contact', (req, res) => {
+    const { name, email, message } = req.body;
+    db.run('INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)',
+        [name, email, message], () => {
+        res.render('contact', { success: true });
+    });
 });
 
 app.get('/faq', (req, res) => {
