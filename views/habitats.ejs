@@ -9,11 +9,23 @@
 <body>
     <%- include('partials/header') %>
     <h1>Our Habitats</h1>
-    <% habitats.forEach(habitat => { %>
-        <div class="habitat-card">
-            <h2><%= habitat.name %></h2>
-            <p><%= habitat.description %></p>
-        </div>
-    <% }) %>
+    <div class="habitats-grid">
+        <% habitats.forEach(habitat => { %>
+            <div class="habitat-card">
+                <div style="padding: 15px;">
+                    <h2><%= habitat.name %></h2>
+                    <p><%= habitat.description %></p>
+                </div>
+                <% if (habitat.name === 'Savannah Plains') { %>
+                    <img src="/images/Savannah/sv1.jpg" alt="Savannah Plains">
+                <% } else if (habitat.name === 'Tropical Rainforest') { %>
+                    <img src="/images/Rainforest/rf1.jpg" alt="Tropical Rainforest">
+                <% } else if (habitat.name === 'Reptile World') { %>
+                    <img src="/images/Reptile/cro1.jpg" alt="Reptile World">
+                <% } %>               
+            </div>
+        <% }) %>
+    </div>
+    <%- include('partials/footer') %>
 </body>
 </html>
