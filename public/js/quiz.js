@@ -1,3 +1,4 @@
+// Array of quiz questions with options and correct answer
 const questions = [
     {
         question: "What is the tallest animal on Earth?",
@@ -26,67 +27,67 @@ const questions = [
     }
 ];
 
-let current = 0;
-let score = 0;
+let current = 0; // Track current question index
+let score = 0; // Track player score
 
-function loadQuestion() {
-    const q = questions[current];
-    document.getElementById('question').textContent = q.question;
-    document.getElementById('feedback').textContent = '';
-    document.getElementById('next-btn').style.display = 'none';
+function loadQuestion() { // Display the current question and options
+    const q = questions[current]; // Get current question object
+    document.getElementById('question').textContent = q.question; // Show question text
+    document.getElementById('feedback').textContent = ''; // Clear previous feedback
+    document.getElementById('next-btn').style.display = 'none'; // Hide next button
 
-    const optionsDiv = document.getElementById('options');
-    optionsDiv.innerHTML = '';
+    const optionsDiv = document.getElementById('options'); // Get options container
+    optionsDiv.innerHTML = ''; // Clear previous options
 
-    q.options.forEach(option => {
-        const btn = document.createElement('button');
-        btn.textContent = option;
+    q.options.forEach(option => { // Loop through each option and create a button
+        const btn = document.createElement('button'); // Create button element
+        btn.textContent = option; // Set button text
         btn.style.display = 'block';
         btn.style.marginBottom = '10px';
         btn.style.width = '200px';
-        btn.addEventListener('click', () => checkAnswer(option));
-        optionsDiv.appendChild(btn);
+        btn.addEventListener('click', () => checkAnswer(option)); // Check answer on click
+        optionsDiv.appendChild(btn); // Add button to page
     });
 }
 
-function checkAnswer(selected) {
-    const correct = questions[current].answer;
-    const feedback = document.getElementById('feedback');
+function checkAnswer(selected) { // Check if selected answer is correct
+    const correct = questions[current].answer; // Get correct answer
+    const feedback = document.getElementById('feedback'); // Get feedback element
 
-    if (selected === correct) {
+    if (selected === correct) { // If answer is correct
         feedback.textContent = '✓ Correct!';
-        feedback.style.color = '#2c5f2e';
-        score++;
-    } else {
+        feedback.style.color = '#2c5f2e'; // Green colour for correct
+        score++; // Increase score
+    } else { // If answer is wrong
         feedback.textContent = `✗ Wrong! The answer is ${correct}.`;
-        feedback.style.color = 'red';
+        feedback.style.color = 'red'; // Red colour for wrong
     }
 
     document.querySelectorAll('#options button').forEach(btn => {
-        btn.disabled = true;
+        btn.disabled = true; // Disable all buttons after answer is selected
     });
 
-    document.getElementById('next-btn').style.display = 'block';
+    document.getElementById('next-btn').style.display = 'block'; // Show next button
 }
 
-document.getElementById('next-btn').addEventListener('click', () => {
-    current++;
-    if (current < questions.length) {
-        loadQuestion();
-    } else {
-        document.getElementById('question-box').style.display = 'none';
-        document.getElementById('result').style.display = 'block';
+document.getElementById('next-btn').addEventListener('click', () => { // Handle next button click
+    current++; // Move to next question
+    if (current < questions.length) { // If there are more questions
+        loadQuestion(); // Load next question
+    } else { // If quiz is finished
+        document.getElementById('question-box').style.display = 'none'; // Hide question box
+        document.getElementById('result').style.display = 'block'; // Show result box
         document.getElementById('score').textContent = 
-            `You scored ${score} out of ${questions.length}!`;
+            `You scored ${score} out of ${questions.length}!`; // Show final score
     }
 });
 
-document.getElementById('restart-btn').addEventListener('click', () => {
-    current = 0;
-    score = 0;
-    document.getElementById('question-box').style.display = 'block';
-    document.getElementById('result').style.display = 'none';
-    loadQuestion();
+document.getElementById('restart-btn').addEventListener('click', () => { // Handle restart button
+    current = 0; // Reset question index
+    score = 0; // Reset score
+    document.getElementById('question-box').style.display = 'block'; // Show question box
+    document.getElementById('result').style.display = 'none'; // Hide result box
+    loadQuestion(); // Load first question
 });
 
-loadQuestion();
+loadQuestion(); // Start the quiz by loading the first question

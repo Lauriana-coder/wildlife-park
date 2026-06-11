@@ -1,33 +1,27 @@
-// Array of slides with image path and focus position
-const slides = [
-    { src: '/images/slideshow/sl1.jpg', position: '50% 30%' },
-    { src: '/images/slideshow/sl2.jpg', position: '50% 20%' },
-    { src: '/images/slideshow/sl3.jpg', position: '50% 50%' },
-    { src: '/images/slideshow/sl4.jpg', position: '50% 40%' },
-    { src: '/images/slideshow/sl5.jpg', position: '50% 60%' }
+const slides = [ // Array of slides with image path and focus position
+    { src: '/images/slideshow/sl1.jpg', position: '50% 30%' }, // Slide 1 - focus slightly above center
+    { src: '/images/slideshow/sl2.jpg', position: '50% 20%' }, // Slide 2 - focus near top
+    { src: '/images/slideshow/sl3.jpg', position: '50% 50%' }, // Slide 3 - focus center
+    { src: '/images/slideshow/sl4.jpg', position: '50% 40%' }, // Slide 4 - focus slightly above center
+    { src: '/images/slideshow/sl5.jpg', position: '50% 60%' }  // Slide 5 - focus slightly below center
 ];
 
-// Start at first image
-let currentSlide = 0;
+let currentSlide = 0; // Track which slide is currently showing
 
-// Function to update image and position
-function showSlide(index) {
-    const img = document.getElementById('slideshow-img');
-    img.src = slides[index].src;
-    img.style.objectPosition = slides[index].position;
+function showSlide(index) { // Update the image and its focus position
+    const img = document.getElementById('slideshow-img'); // Get the slideshow image element
+    img.src = slides[index].src; // Set the image source
+    img.style.objectPosition = slides[index].position; // Set the focus position
 }
 
-// Function to go to next slide
-function nextSlide() {
-    currentSlide++;
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
+function nextSlide() { // Move to the next slide
+    currentSlide++; // Increment slide index
+    if (currentSlide >= slides.length) { // If we reached the last slide
+        currentSlide = 0; // Go back to first slide
     }
-    showSlide(currentSlide);
+    showSlide(currentSlide); // Show the next slide
 }
 
-// Show first slide
-showSlide(0);
+showSlide(0); // Show the first slide when page loads
 
-// Change image every 3 seconds
-setInterval(nextSlide, 3000);
+setInterval(nextSlide, 3000); // Automatically change slide every 3 seconds
