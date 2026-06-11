@@ -41,6 +41,7 @@ h2 {
     font-size: 26px;
     color: #4a7c59;
     margin-bottom: 8px;
+    margin-left: 30px;
 }
 
 p {
@@ -103,6 +104,14 @@ h3 {
 
 h3 + p {
     margin: 0 30px 15px 30px;
+}
+
+h2 + p {
+    margin: 0 0 15px 50px;
+}
+
+.faq-content p {
+    margin: 0 0 15px 50px !important;
 }
 
 @media (max-width: 768px) {
@@ -303,4 +312,21 @@ footer p {
 
 #lightbox-close:hover {
     color: #a8d5a2;
+}
+
+/* FAQ page content */
+.faq-content {
+    margin: 0 50px;
+}
+
+.faq-content h2 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    margin-left: 0;
+}
+
+.faq-content p {
+    margin-left: 0;
+    margin-bottom: 15px;
+    padding-left: 0;
 }
