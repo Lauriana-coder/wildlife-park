@@ -12,23 +12,29 @@
     <div class="habitats-grid">
         <% habitats.forEach(habitat => { %>
             <div class="habitat-card">
-                <div style="padding: 15px;">
-                    <h2><%= habitat.name %></h2>
+                <div style="padding: 1px;">
+                    <% if (habitat.name === 'Savannah Plains') { %>
+                        <h2>Savannah</h2>
+                    <% } else if (habitat.name === 'Tropical Rainforest') { %>
+                        <h2>Rainforest</h2>
+                    <% } else { %>
+                        <h2>Reptile World</h2>
+                    <% } %>
                     <p><%= habitat.description %></p>
                 </div>
                 <% if (habitat.name === 'Savannah Plains') { %>
-                    <img src="/images/Savannah/sv1.jpg" alt="Savannah Plains">
+                    <img src="/images/Savannah/sv1.jpg" alt="Two lionesses standing on dry wooden logs beside a large tree trunk with the African savannah landscape in the background">
                 <% } else if (habitat.name === 'Tropical Rainforest') { %>
-                    <img src="/images/Rainforest/rf1.jpg" alt="Tropical Rainforest">
-                <% } else if (habitat.name === 'Reptile World') { %>
-                    <img src="/images/Reptile/cro1.jpg" alt="Reptile World">
+                    <img src="/images/Rainforest/rf1.jpg" alt="Sunlight rays filtering through a lush green rainforest canopy onto a misty waterfall flowing over mossy rocks">
+                <% } else { %>
+                    <img src="/images/Reptile/cro1.jpg" alt="An extreme close-up of a crocodile eye and scaly skin reflecting on the dark water surface below">
                 <% } %>               
             </div>
         <% }) %>
     </div>   
     <div id="lightbox" style="display:none;"> <!-- Lightbox overlay - shows image fullscreen when clicked -->
         <span id="lightbox-close">✕</span> <!-- Close button -->
-        <img id="lightbox-img" src="/images/Savannah/sv1.jpg" alt="Habitat full view">
+        <img id="lightbox-img" src="/images/Savannah/sv1.jpg" alt="Habitat image displayed in fullscreen">
     </div>
     <script src="/js/lightbox.js"></script> <!-- Load lightbox functionality -->
     <%- include('partials/footer') %>

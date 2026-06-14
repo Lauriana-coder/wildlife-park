@@ -10,7 +10,7 @@
     <%- include('partials/header') %>
     <h1>Contact Us</h1>
     <div id="error-message" style="display:none; color:red; margin: 0 30px 10px 30px; font-weight:bold;"></div>
-    <form action="/contact" method="POST">
+    <form action="/contact" method="POST" novalidate>
         <label>Name:</label>
         <input type="text" name="name">
         <label>Email:</label>

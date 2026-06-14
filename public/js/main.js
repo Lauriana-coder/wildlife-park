@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => { // Wait for page to fully load before running
-    const form = document.querySelector('form'); // Get the contact form
+    const form = document.querySelector('form'); //     Get the contact form
     const errorDiv = document.getElementById('error-message'); // Get the error message div
 
     if (form) { // Only run if a form exists on the page

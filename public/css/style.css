@@ -53,9 +53,16 @@ p {
 .habitat-card {
     background: white;
     border-radius: 8px;
+    overflow: hidden;
     padding: 20px;
     margin: 20px 30px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.habitat-card p {
+    text-align: left;
+    padding-left: 1px;
 }
 
 form {
@@ -224,9 +231,10 @@ footer p {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: 8px 8px 0 0;
+    border-radius: 8px;
     margin-bottom: 15px;
     object-position: 50% 50%;
+    display: block;
 }
 
 /* Hero section */
@@ -322,7 +330,7 @@ footer p {
 .faq-content h2 {
     margin-top: 20px;
     margin-bottom: 8px;
-    margin-left: 0;
+    margin-left: 18px;/* Same size as h3 that I have to change because of W3C validation*/
 }
 
 .faq-content p {
