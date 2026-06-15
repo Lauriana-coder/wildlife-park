@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Into The Wild</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <h1>Search</h1>
+
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search animals or habitats..." aria-label="Search animals or habitats">
+            <button id="search-btn">Search</button>
+        </div>
+        <div id="search-status" aria-live="polite"></div> <!-- Screen reader announces results automatically -->
+        <div id="search-results"></div> <!-- Results are injected here by AJAX -->
+    </div>
+
+    <script src="/js/search.js"></script>
+    <%- include('partials/footer') %>
+</body>
+</html>
